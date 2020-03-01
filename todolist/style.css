@@ -1,0 +1,260 @@
+:root {
+    --main-with: 800px;
+    --white-color:rgb(230, 230, 230);
+    --cat1-color:rgb(161, 255, 161);
+    --cat2-color:rgb(255, 155, 255);
+    --cat3-color:rgb(163, 163, 255);
+    --border-input: 1px solid gray;
+    --border-input-error: 2px solid red;
+  }
+
+body {
+    margin: 0;
+    width: auto;
+    font-family: 'Spartan';
+}
+
+.container {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: var(--main-with);
+    height: 100%;
+    padding: 30px 50px;
+}
+
+ul {
+    list-style: none;
+    margin: 0em;
+    padding-inline-start: 0%;
+}
+
+#todo {
+    width: 46%;
+    border: none;
+    border-bottom: var(--border-input);
+    display: inline;
+    padding: 1em;
+    font-size: 16px;
+}
+
+#todo:hover {
+    border-bottom: 3px solid gray;
+}
+
+#todo:focus {
+    background-color: var(--white-color);
+    color: black;
+}
+
+#category {
+    font-size: 16px;
+    width: 48.8%;
+    border: none;
+    border-bottom: var(--border-input);
+    display: inline;
+    padding: 1em;
+    height: 52px;
+    background-color: white;
+    border-radius: 0px;
+}
+
+#category:hover {
+    border-bottom: 3px solid gray;
+}
+
+#category:focus {
+    background-color: var(--white-color);
+}
+
+#button {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    margin: 2px;
+    font-size: 16px;
+    border: 1px solid gray;
+}
+
+#button:hover {
+    background-color: var(--white-color);
+}
+
+.row {
+    width: 100%;
+    margin: 3px;
+}
+
+.bgColTrans {
+    transition: all 1s;
+    background-color: transparent !important;
+}
+
+.todoItem {
+    margin: 2px;
+    width: 100%;
+    height: 2%;
+    padding: 2% 0%;
+    font-size: medium;
+    display: block;
+}
+
+.todoItemHover {
+    transition: all .5s;
+    background-color: red !important;
+}
+
+.cat1 {
+    background-color: var(--cat1-color);
+}
+
+.cat2 {
+    background-color: var(--cat2-color);
+}
+
+.cat3 {
+    background-color: var(--cat3-color);
+}
+
+.error {
+    font-size: 16px;
+    width: 100%;
+    padding: 1em 0em;
+    margin: 2px 0px;
+    border: 2px red solid;
+    background-color: rgb(255, 50, 50);
+}
+
+.error:hover {
+    background-color: rgb(255, 29, 29);
+}
+
+.errorInput {
+    border: var(--border-input-error) !important;
+}
+
+.todos-enter-active, .todos-leave-active {
+    transition: all 1s;
+}
+.todos-enter {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.todos-leave-to {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px 0px;
+    border: 1px solid #888;
+    width: var(--main-with);
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 50px;
+	height: 25px;
+	background: gray;
+	display: inline-block;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 25px;
+	height: 25px;
+	background: #fff;
+    border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: blue;
+}
+
+input:checked + label:after {
+	left: calc(100%);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 30px;
+}
+
+#info {
+    position: absolute;
+    top: 65px;
+    left: auto;
+    width: 250px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: auto;
+        padding: 30px 10px;
+    }
+    .todoItem {
+        width: auto;
+    }
+    #todo, #submit {
+        width: 90%;
+    }
+    #category {
+        width: 100%;
+    }
+    .modal-content {
+        width: auto;
+    }
+    #info {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Vue todolist</title>
+</head>
+<body>
+    <nav></nav>
+
+    <div id="app" class="container">
+        <modal :value="modalOpen" @close-modal="openModal"></modal>
+
+        <actual-time></actual-time>
+
+        <h1>
+            {{ name }} <i @mouseover="showInfo" @mouseleave="hideInfo" class="fa fa-question-circle" id="infoIcon" aria-hidden="true"></i>
+        </h1>
+        
+        <transition name="modal-tr"
+            enter-active-class="animated fadeIn"
+            leave-active-class="animated fadeOut">
+            <div v-show="infoOpen" id="info">
+                <ul>
+                    <li>Categories</li>
+                    <li class="cat1">Job</li>
+                    <li class="cat2">Shop</li>
+                    <li class="cat3">Event</li>
+                </ul>
+            </div>
+        </transition>
+
+        <todo-item @open-modal-window="openModal"></todo-item>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

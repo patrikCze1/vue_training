@@ -1,0 +1,1 @@
+Socks was developed with vue tutorial on this site https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/
