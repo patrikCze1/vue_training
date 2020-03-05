@@ -1,0 +1,29 @@
+:root {
+    --main-with: 800px;
+    --yellow-color:yellow;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+#btn {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+#desc {
+    text-align: center;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}

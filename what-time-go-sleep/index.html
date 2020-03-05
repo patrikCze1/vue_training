@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>What time go to bed</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="" class="brand-logo center">What time do you want to wake up?</a>
+        </div>
+      </nav>
+    <div id="app" class="container">
+        <calculator @return-result="showResult" @hide-result="hideResult"></calculator>
+
+        <transition name="fade">
+          <h2 v-if="result">
+            <p>You should go to bed before: 
+            {{ result.hour }}:{{ result.minute }}</p>
+          </h2>
+        </transition>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
